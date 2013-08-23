@@ -78,12 +78,21 @@ var shg_table = [
 
 function stackBlurImage( imageID, canvasID, radius, blurAlphaChannel )
 {
-			
- 	var img = document.getElementById( imageID );
+ 	var img;
+ 	if (typeof imageId ===  'string') {
+ 		img = document.getElementById( imageID );	
+ 	} else {
+ 		img = imageId
+ 	}
 	var w = img.naturalWidth;
     var h = img.naturalHeight;
-       
-	var canvas = document.getElementById( canvasID );
+	
+	var canvas;
+	if (typeof canvasID === 'string') {
+		canvas = document.getElementById( canvasID );
+	} else {
+		canvas = canvasID;
+	}
       
     canvas.style.width  = w + "px";
     canvas.style.height = h + "px";
