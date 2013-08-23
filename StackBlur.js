@@ -79,10 +79,10 @@ var shg_table = [
 function stackBlurImage( imageID, canvasID, radius, blurAlphaChannel )
 {
  	var img;
- 	if (typeof imageId ===  'string') {
+ 	if (typeof imageID ===  'string') {
  		img = document.getElementById( imageID );	
  	} else {
- 		img = imageId
+ 		img = imageID;
  	}
 	var w = img.naturalWidth;
     var h = img.naturalHeight;
