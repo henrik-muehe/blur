@@ -117,7 +117,13 @@ function stackBlurCanvasRGBA( id, top_x, top_y, width, height, radius )
 	if ( isNaN(radius) || radius < 1 ) return;
 	radius |= 0;
 	
-	var canvas  = document.getElementById( id );
+	var canvas;
+	if (typeof id === 'string') {
+		canvas = document.getElementById( id );
+	} else {
+		canvas = id;
+	}
+	
 	var context = canvas.getContext("2d");
 	var imageData;
 	
@@ -382,7 +388,13 @@ function stackBlurCanvasRGB( id, top_x, top_y, width, height, radius )
 	if ( isNaN(radius) || radius < 1 ) return;
 	radius |= 0;
 	
-	var canvas  = document.getElementById( id );
+	var canvas;
+	if (typeof id === 'string') {
+		canvas = document.getElementById( id );
+	} else {
+		canvas = id;
+	}
+	
 	var context = canvas.getContext("2d");
 	var imageData;
 	
